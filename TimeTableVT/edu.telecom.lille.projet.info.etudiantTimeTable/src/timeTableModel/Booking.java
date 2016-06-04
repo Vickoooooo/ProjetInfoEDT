@@ -18,37 +18,36 @@ public class Booking {
 	/**
 	 * Description of the property bookingID.
 	 */
-	private int bookingID = 0;
+	private int bookingID;
 	
 	/**
 	 * Description of the property login.
 	 */
-	private String login = "";
+	private String login;
 
 	/**
 	 * Description of the property dateBegin.
 	 */
-	private String dateBegin = "";
+	private String dateBegin;
 
 	/**
 	 * Description of the property dateEnd.
 	 */
-	private String dateEnd = "";
+	private String dateEnd;
 
 	/**
 	 * Description of the property roomID.
 	 */
-	private int roomID = 0;
+	private int roomID;
 
 	/**
 	 * Description of the property rooms.
 	 */
-	public HashSet<Room> rooms = new HashSet<Room>();
+	//public HashSet<Room> rooms = new HashSet<Room>();
 
 	// Start of user code (user defined attributes for Booking)
 
-	// End of user code
-
+	
 	/**
 	 * The constructor.
 	 */
@@ -66,7 +65,7 @@ public class Booking {
 	 * Description of the method getBookingMaxID.
 	 * @param int 
 	 */
-	public void getBookingMaxID(Object int) {
+	//public void getBookingMaxID(Object int) {
 		// Start of user code for method getBookingMaxID
 		// End of user code
 	}
@@ -78,7 +77,7 @@ public class Booking {
 	 * Returns dateBegin.
 	 * @return dateBegin 
 	 */
-	//public String getDateBegin() {
+	public String getDateBegin() {
 		return this.dateBegin;
 	}
 
@@ -86,7 +85,7 @@ public class Booking {
 	 * Sets a value to attribute dateBegin. 
 	 * @param newDateBegin 
 	 */
-	//public void setDateBegin(String newDateBegin) {
+	public void setDateBegin(String newDateBegin) {
 		this.dateBegin = newDateBegin;
 	}
 
@@ -94,7 +93,7 @@ public class Booking {
 	 * Returns bookingID.
 	 * @return bookingID 
 	 */
-	//public int getBookingID() {
+	public int getBookingID() {
 		return this.bookingID;
 	}
 
@@ -102,7 +101,7 @@ public class Booking {
 	 * Sets a value to attribute bookingID. 
 	 * @param newBookingID 
 	 */
-	//public void setBookingID(int newBookingID) {
+	public void setBookingID(int newBookingID) {
 		this.bookingID = newBookingID;
 	}
 
@@ -110,7 +109,7 @@ public class Booking {
 	 * Returns login.
 	 * @return login 
 	 */
-	//public String getLogin() {
+	public String getLogin() {
 		return this.login;
 	}
 
@@ -118,7 +117,7 @@ public class Booking {
 	 * Sets a value to attribute login. 
 	 * @param newLogin 
 	 */
-	//public void setLogin(String newLogin) {
+	public void setLogin(String newLogin) {
 		this.login = newLogin;
 	}
 
@@ -126,7 +125,7 @@ public class Booking {
 	 * Returns dateEnd.
 	 * @return dateEnd 
 	 */
-	//public String getDateEnd() {
+	public String getDateEnd() {
 		return this.dateEnd;
 	}
 
@@ -134,7 +133,7 @@ public class Booking {
 	 * Sets a value to attribute dateEnd. 
 	 * @param newDateEnd 
 	 */
-	//public void setDateEnd(String newDateEnd) {
+	public void setDateEnd(String newDateEnd) {
 		this.dateEnd = newDateEnd;
 	}
 
@@ -142,7 +141,7 @@ public class Booking {
 	 * Returns roomID.
 	 * @return roomID 
 	 */
-	//public int getRoomID() {
+	public int getRoomID() {
 		return this.roomID;
 	}
 
@@ -150,16 +149,9 @@ public class Booking {
 	 * Sets a value to attribute roomID. 
 	 * @param newRoomID 
 	 */
-	//public void setRoomID(int newRoomID) {
+	public void setRoomID(int newRoomID) {
 		this.roomID = newRoomID;
 	}
 
-	/**
-	 * Returns rooms.
-	 * @return rooms 
-	 */
-	public HashSet<Room> getRooms() {
-		return this.rooms;
-	}
-
+	// End of user code
 }
