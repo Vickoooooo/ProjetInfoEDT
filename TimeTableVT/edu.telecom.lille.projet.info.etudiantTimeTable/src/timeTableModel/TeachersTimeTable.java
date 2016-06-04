@@ -3,9 +3,10 @@
  *******************************************************************************/
 package timeTableModel;
 
-import timeTableModel.TimeTable;
-// Start of user code (user defined imports)
 
+// Start of user code (user defined imports)
+import timeTableModel.TimeTable;
+import time.util.*;
 // End of user code
 
 /**
@@ -15,26 +16,18 @@ import timeTableModel.TimeTable;
  */
 public class TeachersTimeTable extends TimeTable {
 	// Start of user code (user defined attributes for TeachersTimeTable)
-
+	private Integer timeTablesId;
 	// End of user code
 
 	/**
 	 * The constructor.
+	 * @param timeTablesID
 	 */
-	public TeachersTimeTable() {
+	public TeachersTimeTable(Integer timeTableID) {
 		// Start of user code constructor for TeachersTimeTable)
-		super();
-		// End of user code
-	}
-
-	/**
-	 * Description of the method getTeacherLogin.
-	 * @param int 
-	 * @param int 
-	 * @return 
-	 */
-	public Object getTeacherLogin(Object int, Object int) {
-		// Start of user code for method getTeacherLogin
+		super(timeTableID);
+		this.timeTablesID = timeTablesID;
+		this.bookings = new HashSet<Booking>();
 		// End of user code
 	}
 	 
