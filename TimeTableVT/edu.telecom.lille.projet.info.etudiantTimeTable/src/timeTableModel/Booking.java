@@ -65,7 +65,7 @@ public class Booking {
 	}
 
 	/**
-	 * Fonction permettant de modifier les paramettres de la varible dateBegin. 
+	 * Fonction permettant de modifier les paramètres de la variable dateBegin. 
 	 * @param newDateBegin 
 	 */
 	public void setDateBegin(Date newDateBegin) {
@@ -81,7 +81,7 @@ public class Booking {
 	}
 
 	/**
-	 * Fonction permettant de modifier les paramettres de la varible bookingID. 
+	 * Fonction permettant de modifier les paramètres de la variable bookingID. 
 	 * @param newBookingID 
 	 */
 	public void setBookingID(int newBookingID) {
@@ -97,7 +97,7 @@ public class Booking {
 	}
 
 	/**
-	 * Fonction permettant de modifier les paramettres de la varible login. 
+	 * Fonction permettant de modifier les paramètres de la variable login. 
 	 * @param newLogin 
 	 */
 	public void setLogin(String newLogin) {
@@ -113,7 +113,7 @@ public class Booking {
 	}
 
 	/**
-	 * Fonction permettant de modifier les paramettres de la varible dateEnd. 
+	 * Fonction permettant de modifier les paramètres de la variable dateEnd. 
 	 * @param newDateEnd 
 	 */
 	public void setDateEnd(Date newDateEnd) {
@@ -129,7 +129,7 @@ public class Booking {
 	}
 
 	/**
-	 * Fonction permettant de modifier les paramettres de la varible roomID. 
+	 * Fonction permettant de modifier les paramètres de la variable roomID. 
 	 * @param newRoomID 
 	 */
 	public void setRoomID(int newRoomID) {

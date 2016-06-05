@@ -19,7 +19,7 @@ public class Room {
 	private int roomID;
 
 	/**
-	 * capacity est la variable indiquent le nombred de places disponibles dans une salle.
+	 * capacity est la variable indiquent le nombre de places disponibles dans une salle.
 	 */
 	private int capacity;
 
@@ -50,7 +50,7 @@ public class Room {
 	}
 
 	/**
-	 * Fonction permettant de modifier les paramettres de la varible roomID. 
+	 * Fonction permettant de modifier les paramètres de la varible roomID. 
 	 * @param newRoomID 
 	 */
 	public void setRoomID(int newRoomID) {
@@ -66,7 +66,7 @@ public class Room {
 	}
 
 	/**
-	 * Fonction permettant de modifier les paramettres de la varible capacity. 
+	 * Fonction permettant de modifier les paramètres de la variable capacity. 
 	 * @param newCapacity 
 	 */
 	public void setCapacity(int newCapacity) {

@@ -2,41 +2,43 @@
  * 2016, All rights reserved.
  *******************************************************************************/
 package timeTableModel;
-import java.util.*;
 
 // Start of user code (user defined imports)
+import java.util.*;
+//End of user code
 
 /**
- * Description of TimeTable.
- * 
+ * Classe TimeTable, constructer & methodes inherentes
  * @author Duruisseaux Victor
  */
 
 public class TimeTable {
 	/**
-	 * Description of the property bookings.
+	 * L'ensemble des reservations du TimeTable.
 	 */
 	public HashSet<Booking> bookings = new HashSet<Booking>();
 
 	/**
-	 * Description of the property groupID.
+	 * groupID est l'identifiant du groupe.
 	 */
 	private String groupID;
 
 	/**
-	 * Description of the property timeTableID.
+	 * timeTableID est l'identifiant du TimeTable.
 	 */
 	private int timeTableID;
 
 	/**
 	 * The constructor.
 	 */
-	public TimeTable() {
+	public TimeTable(Integer groupID2) {
 		super();
+	timeTableID=groupID2;
+	this.bookings = new HashSet<Booking>();
 	}
 
 	/**
-	 * Returns bookings.
+	 * Méthode de class qui permet de renvoyer l'ensemble des réservations qui composent TimeTable
 	 * @return bookings 
 	 */
 	public HashSet<Booking> getBookings() {
@@ -44,7 +46,7 @@ public class TimeTable {
 	}
 
 	/**
-	 * Returns groupID.
+	 * Fonction permettant de récupérer la variable groupID.
 	 * @return groupID 
 	 */
 	public String getGroupID() {
@@ -52,7 +54,7 @@ public class TimeTable {
 	}
 
 	/**
-	 * Sets a value to attribute groupID. 
+	 * Fonction permettant de modifier les paramètres de la variable groupID. 
 	 * @param newGroupID 
 	 */
 	public void setGroupID(String newGroupID) {
@@ -60,21 +62,29 @@ public class TimeTable {
 	}
 
 	/**
-	 * Returns timeTablesID.
-	 * @return timeTablesID 
+	 * Methode de classe qui permet d'ajouter une réservation à TimeTable.
+	 * @param Booking book
 	 */
-	public int getTimeTableID() {
-		return this.timeTableID;
+	public void addBooking(Booking book){
+		this.bookings.add(book);
 	}
-
+	
+	
 	/**
-	 * Sets a value to attribute timeTablesID. 
-	 * @param newTimeTablesID 
+	 * Methode de classe qui permet de supprimer une réservation de TimeTable.
+	 * @param Booking book
 	 */
-	public void setTimeTablesID(int newTimeTableID) {
-		this.timeTableID = newTimeTableID;
+	public void removeBooking(Booking book){
+		this.bookings.remove(book);
 	}
-
+	
+	/**
+	 * Methode de classe qui permet de modifier l'identifiant de TimeTable.
+	 * @param newGroupId 
+	 */
+	public void settimeTableId(int newtimeTableId) {
+		this.timeTableId = newtimeTableId;
+	}
 }
 
 //End of user code
