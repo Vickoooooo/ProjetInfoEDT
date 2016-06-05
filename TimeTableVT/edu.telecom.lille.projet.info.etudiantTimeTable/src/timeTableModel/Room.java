@@ -16,12 +16,12 @@ public class Room {
 	/**
 	 * Description of the property roomID.
 	 */
-	private int roomID = 0;
+	private int roomID;
 
 	/**
 	 * Description of the property capacity.
 	 */
-	private int capacity = 0;
+	private int capacity;
 
 	// Start of user code (user defined attributes for Room)
 
@@ -30,27 +30,15 @@ public class Room {
 	/**
 	 * The constructor.
 	 */
-	public Room(int salleID, int capaciteSalle) {
+	public Room(int roomID, int capacity) {
 		// Start of user code constructor for Room)
 		super();
-		this.roomID = salleID;
-		this.capacity = capaciteSalle;
+		this.roomID = roomID;
+		this.capacity = capacity;
 		// End of user code
 	}
 
-	/**
-	 * Description of the method getRoom.
-	 * @param int 
-	 * @param int 
-	 */
-	//public void getRoom(Object int, Object int) {
-		// Start of user code for method getRoom
-		// End of user code
-	}
-
-	// Start of user code (user defined methods for Room)
-
-	// End of user code
+	
 	/**
 	 * Returns roomID.
 	 * @return roomID 

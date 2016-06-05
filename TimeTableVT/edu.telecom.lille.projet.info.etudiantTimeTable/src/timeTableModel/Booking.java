@@ -28,12 +28,12 @@ public class Booking {
 	/**
 	 * Description of the property dateBegin.
 	 */
-	private String dateBegin;
+	private Date dateBegin;
 
 	/**
 	 * Description of the property dateEnd.
 	 */
-	private String dateEnd;
+	private Date dateEnd;
 
 	/**
 	 * Description of the property roomID.
@@ -47,7 +47,6 @@ public class Booking {
 
 	// Start of user code (user defined attributes for Booking)
 
-	
 	/**
 	 * The constructor.
 	 */
@@ -65,19 +64,15 @@ public class Booking {
 	 * Description of the method getBookingMaxID.
 	 * @param int 
 	 */
-	//public void getBookingMaxID(Object int) {
-		// Start of user code for method getBookingMaxID
-		// End of user code
+	public void getBookingMaxID(int timeTableID) {
 	}
 
-	// Start of user code (user defined methods for Booking)
 
-	// End of user code
 	/**
 	 * Returns dateBegin.
 	 * @return dateBegin 
 	 */
-	public String getDateBegin() {
+	public Date getDateBegin() {
 		return this.dateBegin;
 	}
 
@@ -85,7 +80,7 @@ public class Booking {
 	 * Sets a value to attribute dateBegin. 
 	 * @param newDateBegin 
 	 */
-	public void setDateBegin(String newDateBegin) {
+	public void setDateBegin(Date newDateBegin) {
 		this.dateBegin = newDateBegin;
 	}
 
@@ -125,7 +120,7 @@ public class Booking {
 	 * Returns dateEnd.
 	 * @return dateEnd 
 	 */
-	public String getDateEnd() {
+	public Date getDateEnd() {
 		return this.dateEnd;
 	}
 
@@ -133,7 +128,7 @@ public class Booking {
 	 * Sets a value to attribute dateEnd. 
 	 * @param newDateEnd 
 	 */
-	public void setDateEnd(String newDateEnd) {
+	public void setDateEnd(Date newDateEnd) {
 		this.dateEnd = newDateEnd;
 	}
 
