@@ -4,22 +4,22 @@
 package timeTableModel;
 
 // Start of user code (user defined imports)
-
+import java.util.HashSet;
 // End of user code
 
 /**
- * Description of Room.
+ *  Classe Room, constructeur & methodes inherentes
  * 
  * @author Duruisseaux Victor
  */
 public class Room {
 	/**
-	 * Description of the property roomID.
+	 * roomID est la variable de l'identifiant de la salle.
 	 */
 	private int roomID;
 
 	/**
-	 * Description of the property capacity.
+	 * capacity est la variable indiquent le nombred de places disponibles dans une salle.
 	 */
 	private int capacity;
 
@@ -29,6 +29,8 @@ public class Room {
 
 	/**
 	 * The constructor.
+	 * @param roomID
+	 * @param capacity
 	 */
 	public Room(int roomID, int capacity) {
 		// Start of user code constructor for Room)
@@ -40,7 +42,7 @@ public class Room {
 
 	
 	/**
-	 * Returns roomID.
+	 * Fonction permettant de récupérer la variable roomID.
 	 * @return roomID 
 	 */
 	public int getRoomID() {
@@ -48,7 +50,7 @@ public class Room {
 	}
 
 	/**
-	 * Sets a value to attribute roomID. 
+	 * Fonction permettant de modifier les paramettres de la varible roomID. 
 	 * @param newRoomID 
 	 */
 	public void setRoomID(int newRoomID) {
@@ -56,7 +58,7 @@ public class Room {
 	}
 
 	/**
-	 * Returns capacity.
+	 * Fonction permettant de récupérer la variable capacity.
 	 * @return capacity 
 	 */
 	public int getCapacity() {
@@ -64,7 +66,7 @@ public class Room {
 	}
 
 	/**
-	 * Sets a value to attribute capacity. 
+	 * Fonction permettant de modifier les paramettres de la varible capacity. 
 	 * @param newCapacity 
 	 */
 	public void setCapacity(int newCapacity) {
