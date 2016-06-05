@@ -16,7 +16,7 @@ public class TimeTable {
 	/**
 	 * L'ensemble des reservations du TimeTable.
 	 */
-	public HashSet<Booking> bookings = new HashSet<Booking>();
+	public static HashSet<Booking> bookings = new HashSet<Booking>();
 
 	/**
 	 * groupID est l'identifiant du groupe.
@@ -49,7 +49,7 @@ public class TimeTable {
 	 * Fonction permettant de récupérer la variable groupID.
 	 * @return groupID 
 	 */
-	public String getGroupID() {
+	public int getGroupID() {
 		return this.groupID;
 	}
 

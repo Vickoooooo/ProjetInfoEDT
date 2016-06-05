@@ -1,45 +1,35 @@
 /* 2016, All rights reserved.
  *******************************************************************************/
 package timeTableController;
+// Start of user code (user defined imports)
 import java.util.*;
 import java.util.Map.Entry;
 import timeTableModel.Booking;
 import timeTableModel.Room;
 import timeTableModel.TimeTable;
 import timeTableModel.TimeTableDB;
-
-// Start of user code (user defined imports)
-
 // End of user code
 
 /**
- * Description of TimeTableController.
+ * Classe qui implÈmente l'interface, contient de nombreuses fonction de gestion globale des emplois du temps
  * 
  * @author Victor Duruisseaux
  */
 public class TimeTableController implements ITimeTableController {
+	// Start of user code (user defined attributes for TimeTableController)
 	/**
 	 * timeTableDB Class.
 	 */
 	public TimeTableDB TimeTableDB;
-
-	// Start of user code (user defined attributes for TimeTableController)
-
-	// End of user code
 
 	/**
 	 * The constructor.
 	 * @param tTfile 
 	 */
 	public TimeTableController(String tTfile) {
-		// Start of user code constructor for TimeTableController)
 		super();
-		// End of user code
 	}
 
-	// Start of user code (user defined methods for TimeTableController)
-
-	// End of user code
 	/**
 	 * timeTableDB.
 	 * @return timeTableDB 
@@ -62,7 +52,6 @@ public class TimeTableController implements ITimeTableController {
 	 * 		Le tableau des TabRoomsId en string
 	 */
 	public String[] roomsToString() {
-		// Start of user code for method roomsIdToString
 		HashSet<Room> RoomsSet = TimeTableDB.RoomsSet;		//RÈcupÈration du HashSet contenant les Rooms
 		Iterator<Room> it1 = RoomsSet.iterator();			//Initialisation de l'itÈrateur et calcul de la longueur du tableau
 		int i =RoomsSet.size();								//RÈcupÈration des roomsId sous la forme d'int conversion en string et ajout dans le tableau de sortie
@@ -74,8 +63,8 @@ public class TimeTableController implements ITimeTableController {
 	    	i++;
 		}
 	    return TabRoomsId;
-		// End of user code
 	}
+	
 	/**
 	 * Fonction permettant de r√©cup√©rer tous les identifiants des salles sous la forme d'un 
 	 * tableau de cha√Ænes de caract√®res o√π chaque ligne contient l'identifiant d'une salle.
@@ -84,7 +73,6 @@ public class TimeTableController implements ITimeTableController {
 	 * 		Un tableau de String contenant toutes les informations de tous les groupes.
 	 */
 	public String[] roomsIdToString() {
-		// Start of user code for method roomsIdToString
 		HashSet<Room> RoomsSet = TimeTableDB.RoomsSet;		//RÈcupÈration du HashSet contenant les Rooms
 		Iterator<Room> it1 = RoomsSet.iterator();			//Initialisation de l'itÈrateur et calcul de la longueur du tableau
 		int i =RoomsSet.size();								//RÈcupÈration des roomsId sous la forme d'int conversion en string et ajout dans le tableau de sortie
@@ -98,7 +86,6 @@ public class TimeTableController implements ITimeTableController {
 	    	i++;
 		}
 	    return TabRoomsId;
-		// End of user code
 	}
 	
 	/**
@@ -109,7 +96,6 @@ public class TimeTableController implements ITimeTableController {
 	 * 		Un tableau de String contenant toutes les identifiants de tous les emplois du temps.
 	 */
 	public String[] timeTablesIDToString(){
-		// Start of user code for method roomsIdToString
 		HashSet<Room> RoomsSet = TimeTableDB.RoomsSet;		//RÈcupÈration du HashSet contenant les Rooms
 		Iterator<Room> it1 = RoomsSet.iterator();			//Initialisation de l'itÈrateur et calcul de la longueur du tableau
 		int i =RoomsSet.size();								//RÈcupÈration des roomsId sous la forme d'int conversion en string et ajout dans le tableau de sortie
@@ -122,7 +108,6 @@ public class TimeTableController implements ITimeTableController {
             i++;
         }
 	    return TabRoomsId;
-		// End of user code
 	}
 
 	
@@ -219,21 +204,21 @@ public class TimeTableController implements ITimeTableController {
 	public int getRoom(int timeTableId, int bookId) {
 		HashSet<TimeTable> TTSet = TimeTableDB.TTSet;
 		Iterator<TimeTable> it1=TTSet.iterator();
-		while(it1.hasNext()){
+		while(it1.hasNext()){//recherche du bon timetable
 			TimeTable TT=(TimeTable)it1.next();
 			if (TT.getGroupId()==timeTableId){//Si on a le bon TimeTable, il faut trouver la bonne reservation
 				HashSet<Booking> Booking=TT.getBookings();
 				Iterator<Booking> it2=Booking.iterator();
-				while(it2.hasNext()){
+				while(it2.hasNext()){//recherche de la bonne reservation
 					Booking BK=(Booking)it2.next();
-					if(BK.getRoomId()==bookId){
+					if(BK.getRoomId()==bookId){//renvoit de la room apres avoir trouver la bonne reservation
 						int SalleID=BK.getRoomId();
 						return SalleID;
 					}
 				}
 			}
 		}
-		return 0;
+		return 0;//si on a rien trouve, retourne 0, qui n'est normalement pas une id valable
 	}
 
 
@@ -259,6 +244,7 @@ public class TimeTableController implements ITimeTableController {
             }
             return false;
     }
+	
 	/**
 	 * Fonction qui ajoute une r√©servation dans l'emploi du temps TimeTableId et qui la sauvegarde dans la base de donn√©es
 	 * 
@@ -278,10 +264,21 @@ public class TimeTableController implements ITimeTableController {
 	 * 		Un boolean indiquant si la r√©servation a bien √©t√© faite
 	 */
 	@Override
-	public boolean addBooking(int timeTableId, int bookingId, String login, Date dateBegin, Date dateEnd, int roomId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    public boolean addBooking(int timeTableId, int bookingId, String login, Date dateBegin, Date dateEnd, int roomId) {
+        Booking NewBooking = new Booking(bookingId,login,dateBegin,dateEnd,roomId); //creation de la nouvelle reservation suivant les parametres
+        //TimeTable NewTT = new TimeTable (timeTableId);
+        Iterator<TimeTable> ItTT = timeTableModel.TimeTableDB.TTSet.iterator() ;    // CrÈation d'un itÈrateur de timetable
+        while(ItTT.hasNext()){//recherche du bon timetable
+        	TimeTable TT=(TimeTable)ItTT.next();
+            if(TT.getGroupId()== timeTableId){ //bon timetable trouvÈ
+            	TT.addBooking(NewBooking);
+                saveDB();
+                return true;
+            }
+       }
+    return false;
+    }
+	
 	/**
 	 * Fonction qui retourne les dates de d√©but et de fin des r√©servations de l'emploi du temps dont l'identifiant est timeTableId.
 	 * 
@@ -294,7 +291,7 @@ public class TimeTableController implements ITimeTableController {
 	 */
 	@Override
 	public void getBookingsDate(int timeTableId, Hashtable<Integer, Date> dateBegin, Hashtable<Integer, Date> dateEnd) {
-		// TODO Auto-generated method stub
+		// Public "void" mais doit retourner les dates ?
 		
 	}
 	/**
@@ -308,10 +305,24 @@ public class TimeTableController implements ITimeTableController {
 	 * 		Un boolean indiquant si la r√©servation a bien √©t√© supprim√©e
 	 */
 	@Override
-	public boolean removeBook(int timeTableId, int bookId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    public boolean removeBook(int timeTableId, int bookId) {
+        Iterator<TimeTable> ItTT = timeTableModel.TimeTableDB.TTSet.iterator();// CrÈation d'un itÈrateur pour parcourir TimeTableSet
+        while(ItTT.hasNext()){
+        	TimeTable TT=(TimeTable)ItTT.next();
+            if(TT.getGroupId()== timeTableId){ //test pour trouver le bon TimeTable
+            	Iterator<Booking> itBB = TimeTable.bookings.iterator();
+                while(itBB.hasNext()){ //recherche de la bonne reservation parmis celle du bon TimeTable
+                	Booking BB=(Booking)itBB.next();
+                	if (BB.getbookId()==bookId){
+                		TT.removeBooking(BB); //on supprime la reservation identifiÈe du bon TimeTable
+                        saveDB();
+                        return true;
+                        }
+                    }
+               	}
+        }
+        return false;
+    }
 	
 	/**
 	 * Fonction qui r√©cup√®re le plus grand identifiant de r√©servation dans l'emploi du temps timeTableId.
@@ -322,10 +333,25 @@ public class TimeTableController implements ITimeTableController {
 	 * 		Le plus grand identifiant de r√©servation
 	 */
 	@Override
-	public int getBookingsMaxId(int timeTableId) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	public int getBookingsMaxId(int timeTableId){
+        int max = 0;
+        HashSet<TimeTable> TTSet = TimeTableDB.TTSet;
+        Iterator<TimeTable> it1 = TimeTableDB.TTSet.iterator();   // Premier itÈrateur pour parcourir les TimeTable
+        while(it1.hasNext()){
+            TimeTable TT=(TimeTable)it1.next();
+            if(TT.getGroupId() == timeTableId){             // On trouve le TimeTable correspondant
+                HashSet<Booking> Booking=TT.getBookings();
+                Iterator<Booking> it2=Booking.iterator();          // 2eme itÈrateur pour parcourir les bookings
+                while (it2.hasNext()){
+                    Booking BB = (Booking)it2.next();
+                    if(BB.getbookId()>max){                  // recherche de maximum
+                        max = BB.getbookId();
+                    }
+                }
+            }
+        }
+        return max;
+    }
 
 	/**
      * Fonction permettant de r√©cup√©rer tous les identifiants des r√©servations de l'emploi du temps timeTableId sous la forme d'un 
@@ -370,6 +396,7 @@ public class TimeTableController implements ITimeTableController {
         this.TimeTableDB.loadDB();
         return false;
     }
-	
+
+	// End of user code
 	
 }

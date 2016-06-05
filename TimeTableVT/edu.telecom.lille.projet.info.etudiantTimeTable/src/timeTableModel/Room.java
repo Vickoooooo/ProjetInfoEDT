@@ -13,6 +13,7 @@ import java.util.HashSet;
  * @author Duruisseaux Victor
  */
 public class Room {
+	// Start of user code (user defined attributes for Room)
 	/**
 	 * roomID est la variable de l'identifiant de la salle.
 	 */
@@ -22,10 +23,6 @@ public class Room {
 	 * capacity est la variable indiquent le nombre de places disponibles dans une salle.
 	 */
 	private int capacity;
-
-	// Start of user code (user defined attributes for Room)
-
-	// End of user code
 
 	/**
 	 * The constructor.
@@ -72,5 +69,5 @@ public class Room {
 	public void setCapacity(int newCapacity) {
 		this.capacity = newCapacity;
 	}
-
+	// End of user code
 }

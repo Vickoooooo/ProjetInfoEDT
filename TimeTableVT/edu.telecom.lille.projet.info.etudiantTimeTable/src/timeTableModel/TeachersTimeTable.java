@@ -16,7 +16,7 @@ import java.util.*;
  */
 public class TeachersTimeTable extends TimeTable {
 	
-	private int timeTableID;
+	private String timeTableID;
 	public HashSet<Booking> bookings;
 
 	/**
