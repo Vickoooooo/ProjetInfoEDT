@@ -8,7 +8,7 @@ import java.util.Date;
 // End of user code
 
 /**
- * Description of Booking.
+ * Fonction permettant de créer une réservation.
  * 
  * @author Duruisseaux Victor
  * @param <EDate>
@@ -16,39 +16,35 @@ import java.util.Date;
 public class Booking {
 	
 	/**
-	 * Description of the property bookingID.
+	 * bookingID est l'identifiant de la réservation.
 	 */
 	private int bookingID;
 	
 	/**
-	 * Description of the property login.
+	 * login est l'identifiant du professeur.
 	 */
 	private String login;
 
 	/**
-	 * Description of the property dateBegin.
+	 * dateBegin est la date du début de réservation.
 	 */
 	private Date dateBegin;
 
 	/**
-	 * Description of the property dateEnd.
+	 * dateEnd est la date de fin de réservation.
 	 */
 	private Date dateEnd;
 
 	/**
-	 * Description of the property roomID.
+	 * roomID est l'identifiant de la salle dans laquelle se fait la réservation.
 	 */
 	private int roomID;
-
-	/**
-	 * Description of the property rooms.
-	 */
-	//public HashSet<Room> rooms = new HashSet<Room>();
 
 	// Start of user code (user defined attributes for Booking)
 
 	/**
 	 * The constructor.
+	 * Pour effectuer une réservation, celle-ci a besoin d'un identifiant (reservationID), de l'identifiant du professeur qui fait la réservation (identifiant), d'une date de début et de fin de réservation (newDateDebut, newDateFin) ainsi que de l'identifiant de la salle réservé (salleID).
 	 */
 	public Booking(int reservationID, String identifiant, Date newDateDebut, Date newDateFin, int salleID) {
 		// Start of user code constructor for Booking)
@@ -61,15 +57,7 @@ public class Booking {
 	}
 
 	/**
-	 * Description of the method getBookingMaxID.
-	 * @param int 
-	 */
-	public void getBookingMaxID(int timeTableID) {
-	}
-
-
-	/**
-	 * Returns dateBegin.
+	 * Fonction permettant de récupérer la date de début de réservation (dateBegin).
 	 * @return dateBegin 
 	 */
 	public Date getDateBegin() {
@@ -77,7 +65,7 @@ public class Booking {
 	}
 
 	/**
-	 * Sets a value to attribute dateBegin. 
+	 * Fonction permettant de modifier les paramettres de la varible dateBegin. 
 	 * @param newDateBegin 
 	 */
 	public void setDateBegin(Date newDateBegin) {
@@ -85,7 +73,7 @@ public class Booking {
 	}
 
 	/**
-	 * Returns bookingID.
+	 * Fonction permettant de récupérer la variable bookingID.
 	 * @return bookingID 
 	 */
 	public int getBookingID() {
@@ -93,7 +81,7 @@ public class Booking {
 	}
 
 	/**
-	 * Sets a value to attribute bookingID. 
+	 * Fonction permettant de modifier les paramettres de la varible bookingID. 
 	 * @param newBookingID 
 	 */
 	public void setBookingID(int newBookingID) {
@@ -101,7 +89,7 @@ public class Booking {
 	}
 
 	/**
-	 * Returns login.
+	 * Fonction permettant de récupérer la variable login.
 	 * @return login 
 	 */
 	public String getLogin() {
@@ -109,7 +97,7 @@ public class Booking {
 	}
 
 	/**
-	 * Sets a value to attribute login. 
+	 * Fonction permettant de modifier les paramettres de la varible login. 
 	 * @param newLogin 
 	 */
 	public void setLogin(String newLogin) {
@@ -117,7 +105,7 @@ public class Booking {
 	}
 
 	/**
-	 * Returns dateEnd.
+	 * Fonction permettant de récupérer la variable dateEnd.
 	 * @return dateEnd 
 	 */
 	public Date getDateEnd() {
@@ -125,7 +113,7 @@ public class Booking {
 	}
 
 	/**
-	 * Sets a value to attribute dateEnd. 
+	 * Fonction permettant de modifier les paramettres de la varible dateEnd. 
 	 * @param newDateEnd 
 	 */
 	public void setDateEnd(Date newDateEnd) {
@@ -133,7 +121,7 @@ public class Booking {
 	}
 
 	/**
-	 * Returns roomID.
+	 * Fonction permettant de récupérer la variable roomID.
 	 * @return roomID 
 	 */
 	public int getRoomID() {
@@ -141,7 +129,7 @@ public class Booking {
 	}
 
 	/**
-	 * Sets a value to attribute roomID. 
+	 * Fonction permettant de modifier les paramettres de la varible roomID. 
 	 * @param newRoomID 
 	 */
 	public void setRoomID(int newRoomID) {
